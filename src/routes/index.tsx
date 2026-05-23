@@ -164,6 +164,22 @@ function Page() {
         </div>
       </section>
 
+      {/* Booking */}
+      <section id="booking" className="border-t border-border/60 bg-card/40">
+        <div className="mx-auto grid max-w-6xl gap-16 px-6 py-24 md:grid-cols-5 md:items-start">
+          <div className={`md:col-span-2 ${isAr ? "md:text-right" : "md:text-left"}`}>
+            <p className="mb-4 text-xs uppercase tracking-[0.3em] text-primary">{t.booking.eyebrow}</p>
+            <h2 className="text-4xl text-foreground md:text-5xl">{t.booking.title}</h2>
+            <p className="mt-4 text-muted-foreground">{t.booking.desc}</p>
+          </div>
+          <div className="md:col-span-3">
+            <div className="rounded-[2rem] border border-border bg-background p-6 shadow-[var(--shadow-soft)] sm:p-10">
+              <BookingForm />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact */}
       <section id="contact" className="border-t border-border/60 bg-secondary/40">
         <div className="mx-auto max-w-4xl px-6 py-24 text-center">
