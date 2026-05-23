@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { LanguageProvider, useLang } from "@/lib/i18n";
 import heroImg from "@/assets/hero-spa.jpg";
 import roomImg from "@/assets/spa-room.jpg";
+import { BookingForm } from "@/components/mesk/BookingForm";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -42,6 +43,7 @@ function Page() {
           <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
             <a href="#services" className="transition hover:text-foreground">{t.nav.services}</a>
             <a href="#why" className="transition hover:text-foreground">{t.nav.why}</a>
+            <a href="#booking" className="transition hover:text-foreground">{t.nav.booking}</a>
             <a href="#contact" className="transition hover:text-foreground">{t.nav.contact}</a>
           </nav>
           <button
@@ -66,7 +68,7 @@ function Page() {
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <a
-                href="#contact"
+                href="#booking"
                 className="rounded-full bg-primary px-7 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-soft)] transition hover:opacity-90"
               >
                 {t.hero.cta}
@@ -119,7 +121,7 @@ function Page() {
                 <div className="mt-auto flex items-center justify-between border-t border-border/60 pt-5 text-sm">
                   <span className="text-muted-foreground">{s.duration} {t.services.min}</span>
                   <a
-                    href="#contact"
+                    href="#booking"
                     className="text-primary transition group-hover:translate-x-0.5"
                   >
                     {t.services.book} →
@@ -162,6 +164,22 @@ function Page() {
         </div>
       </section>
 
+      {/* Booking */}
+      <section id="booking" className="border-t border-border/60 bg-card/40">
+        <div className="mx-auto grid max-w-6xl gap-16 px-6 py-24 md:grid-cols-5 md:items-start">
+          <div className={`md:col-span-2 ${isAr ? "md:text-right" : "md:text-left"}`}>
+            <p className="mb-4 text-xs uppercase tracking-[0.3em] text-primary">{t.booking.eyebrow}</p>
+            <h2 className="text-4xl text-foreground md:text-5xl">{t.booking.title}</h2>
+            <p className="mt-4 text-muted-foreground">{t.booking.desc}</p>
+          </div>
+          <div className="md:col-span-3">
+            <div className="rounded-[2rem] border border-border bg-background p-6 shadow-[var(--shadow-soft)] sm:p-10">
+              <BookingForm />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact */}
       <section id="contact" className="border-t border-border/60 bg-secondary/40">
         <div className="mx-auto max-w-4xl px-6 py-24 text-center">
@@ -192,7 +210,7 @@ function Page() {
         </div>
       </section>
 
-      <footer className="border-t border-border/60 bg-background">
+      <footer id="bottom" className="border-t border-border/60 bg-background">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-8 text-xs text-muted-foreground sm:flex-row">
           <span className="font-display text-base text-primary">{t.brand}</span>
           <span>© {new Date().getFullYear()} {t.brand}. {t.footer.rights}</span>
