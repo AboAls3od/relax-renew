@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { LanguageProvider, useLang } from "@/lib/i18n";
 import heroImg from "@/assets/hero-spa.jpg";
 import roomImg from "@/assets/spa-room.jpg";
+import { BookingForm } from "@/components/mesk/BookingForm";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -42,6 +43,7 @@ function Page() {
           <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
             <a href="#services" className="transition hover:text-foreground">{t.nav.services}</a>
             <a href="#why" className="transition hover:text-foreground">{t.nav.why}</a>
+            <a href="#booking" className="transition hover:text-foreground">{t.nav.booking}</a>
             <a href="#contact" className="transition hover:text-foreground">{t.nav.contact}</a>
           </nav>
           <button
@@ -66,7 +68,7 @@ function Page() {
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <a
-                href="#contact"
+                href="#booking"
                 className="rounded-full bg-primary px-7 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-soft)] transition hover:opacity-90"
               >
                 {t.hero.cta}
@@ -119,7 +121,7 @@ function Page() {
                 <div className="mt-auto flex items-center justify-between border-t border-border/60 pt-5 text-sm">
                   <span className="text-muted-foreground">{s.duration} {t.services.min}</span>
                   <a
-                    href="#contact"
+                    href="#booking"
                     className="text-primary transition group-hover:translate-x-0.5"
                   >
                     {t.services.book} →
