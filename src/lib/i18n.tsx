@@ -2,11 +2,11 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 
 export type Lang = "ar" | "en";
 
-type Dict = typeof translations.en;
+type Dir = "ltr" | "rtl";
 
 export const translations = {
   en: {
-    dir: "ltr" as const,
+    dir: "ltr" as Dir,
     brand: "Mesk",
     tagline: "Massage & Wellness",
     nav: { services: "Services", why: "Why Mesk", contact: "Contact" },
@@ -55,7 +55,7 @@ export const translations = {
     switchLang: "العربية",
   },
   ar: {
-    dir: "rtl" as const,
+    dir: "rtl" as Dir,
     brand: "مِسك",
     tagline: "مساج وعافية",
     nav: { services: "الخدمات", why: "لماذا مِسك", contact: "تواصل" },
@@ -104,6 +104,8 @@ export const translations = {
     switchLang: "English",
   },
 };
+
+type Dict = (typeof translations)["en"];
 
 type Ctx = { lang: Lang; t: Dict; toggle: () => void };
 const LangCtx = createContext<Ctx | null>(null);
