@@ -9,7 +9,6 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
-import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -78,6 +77,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Mesk" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Mesk — Massage & Wellness" },
+      { name: "twitter:title", content: "Mesk — Massage & Wellness" },
+      { property: "og:description", content: "Mesk · A quiet massage & wellness studio. مركز مِسك للمساج والعافية." },
+      { name: "twitter:description", content: "Mesk · A quiet massage & wellness studio. مركز مِسك للمساج والعافية." },
     ],
     links: [
       {
@@ -112,7 +115,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
-      <Toaster />
     </QueryClientProvider>
   );
 }
