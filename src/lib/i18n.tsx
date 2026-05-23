@@ -9,7 +9,7 @@ export const translations = {
     dir: "ltr" as Dir,
     brand: "Mesk",
     tagline: "Massage & Wellness",
-    nav: { services: "Services", why: "Why Mesk", contact: "Contact" },
+    nav: { services: "Services", why: "Why Mesk", booking: "Book", contact: "Contact" },
     hero: {
       eyebrow: "A quiet space for the body",
       title: "Stillness begins with a single touch.",
@@ -81,7 +81,7 @@ export const translations = {
     dir: "rtl" as Dir,
     brand: "مِسك",
     tagline: "مساج وعافية",
-    nav: { services: "الخدمات", why: "لماذا مِسك", contact: "تواصل" },
+    nav: { services: "الخدمات", why: "لماذا مِسك", booking: "احجز", contact: "تواصل" },
     hero: {
       eyebrow: "مساحة هادئة للجسد",
       title: "السكون يبدأ بلمسةٍ واحدة.",
