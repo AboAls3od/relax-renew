@@ -194,7 +194,7 @@ function Page() {
         </div>
       </section>
 
-      <footer className="border-t border-border/60 bg-background">
+      <footer id="bottom" className="border-t border-border/60 bg-background">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-8 text-xs text-muted-foreground sm:flex-row">
           <span className="font-display text-base text-primary">{t.brand}</span>
           <span>© {new Date().getFullYear()} {t.brand}. {t.footer.rights}</span>
